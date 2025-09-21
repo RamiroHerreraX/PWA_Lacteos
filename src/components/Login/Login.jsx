@@ -103,7 +103,8 @@ export default function Login() {
               <label>
                 <input type="checkbox" /> Recuérdame
               </label>
-              <Link to="#">¿Olvidaste tu contraseña?</Link>
+              <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
+              <Link to="/recuperar-usuario">¿Olvidaste tu usuario?</Link>
             </div>
 
             <button type="submit" className="login-btn">

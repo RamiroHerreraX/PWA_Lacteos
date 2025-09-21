@@ -8,6 +8,9 @@ import { AuthProvider } from "./hooks/AuthContext";
 
 
 import "./App.css";
+import ForgotPassword from "./components/Login/ForgotPassword";
+import ResetPassword from "./components/Login/ResetPassword";
+import RecuperarUsuario from "./components/Login/RecuperarUsuario";
 
 function App() {
   return (
@@ -21,6 +24,11 @@ function App() {
         <Route path="/usuarios" element={<> <Usuarios /> <NuevoUsuario /> </>} />
 
         <Route path="/" element={<Home />} />
+
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset/:token" element={<ResetPassword />} />
+        <Route path="/recuperar-usuario" element={<RecuperarUsuario />} />
+
       </Routes>
       </AuthProvider>
     </BrowserRouter>
