@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext  } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../hooks/AuthContext";
 import "./Login.css";
 
 export default function Login() {
@@ -9,6 +10,7 @@ export default function Login() {
   const [step, setStep] = useState(1); 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const { login } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -30,7 +32,7 @@ export default function Login() {
       if (!res.ok) {
         setError(data.msg || "Credenciales incorrectas");
       } else {
-        setSuccess("Código 2FA enviado a tu correo 📧");
+        setSuccess("Código 2FA enviado a tu correo");
         setStep(2); 
       }
     } catch (err) {
@@ -59,6 +61,7 @@ export default function Login() {
         localStorage.setItem("rol", data.rol);
         localStorage.setItem("token", data.token);
         console.log("Login exitoso, rol:", data.rol);
+        login(data.token, data.rol);
         navigate("/usuarios");
       }
     } catch (err) {

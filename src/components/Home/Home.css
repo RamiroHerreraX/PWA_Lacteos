@@ -1,0 +1,31 @@
+.home {
+  display: grid;
+  place-items: center;
+  height: calc(100vh - 60px);
+  text-align: center;
+  padding: 2rem;
+}
+
+.home h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.home p {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+  color: var(--text-dark);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #045667;
+}
